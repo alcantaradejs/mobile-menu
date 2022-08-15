@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #a8f;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+    background-color: #222;
+    color: #fff;
+    width: 100vw;
+    height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .mobile-button {
+    display: none;
+
+    background-color: transparent;
+    border: none;
+    width: 50px;
+    height: 50px;
+}
+
+header .mobile-button div {
+    background-color: #fff;
+    width: 25px;
+    height: 5px;
+    border-radius: 5px;
+}
+
+header nav {
+    background-color: #222;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 400px;
+}
+
+header nav a {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    color: #fff;
+}
+
+header nav a:hover {
+    background-color: #2f2f2f;
+}
+
+@media (max-width: 100vh) {
+    header {
+        justify-content: start;
+    }
+
+    header .mobile-button{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+    }
+
+    header nav {
+        position: absolute;
+        top: 60px;
+        left: 0px;
+
+        flex-direction: column;
+        width: 70vw;
+        height: 100vh;
+
+        justify-content: start;
+        transform: translateX(-100%);
+        transition: 300ms ease-in;
+    }
+
+    header nav.active {
+        transform: translate(0);
+    }
+
+    header nav a {
+        height: 10vh;
+    }
+}
